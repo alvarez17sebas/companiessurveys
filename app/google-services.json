@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "113576468595",
+    "firebase_url": "https://companiessurveys.firebaseio.com",
+    "project_id": "companiessurveys",
+    "storage_bucket": "companiessurveys.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113576468595:android:8f99adfdea2384e5e18a06",
+        "android_client_info": {
+          "package_name": "com.salvarez.companiessurveys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113576468595-sf6i5gfh27f0mdsf7b9n5i0ukbu6k3fq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salvarez.companiessurveys",
+            "certificate_hash": "6ba92372f26bb4f39140ebc03d3255d85ded1c24"
+          }
+        },
+        {
+          "client_id": "113576468595-ik7avlbr8dqcvtfp3upac87slb85s03g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuDHasfM6lgyPaWek8Acj0JdvERMYWX18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113576468595-ik7avlbr8dqcvtfp3upac87slb85s03g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
