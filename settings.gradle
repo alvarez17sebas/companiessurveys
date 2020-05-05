@@ -1,0 +1,2 @@
+rootProject.name='Companies Surveys'
+include ':app'
