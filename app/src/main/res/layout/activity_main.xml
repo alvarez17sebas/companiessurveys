@@ -6,13 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegisterCompany"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_company"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/multiplier_5X_dp"
+        android:layout_marginRight="@dimen/multiplier_5X_dp"
+        android:layout_marginBottom="@dimen/multiplier_3X_dp"
+        android:textSize="@dimen/multiplier_11X_sp"
+        app:icon="@drawable/ic_company"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
