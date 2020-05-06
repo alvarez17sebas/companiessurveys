@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Companies Surveys</string>
+
     <string name="register_company">Registrar compañia</string>
     <string name="login">Iniciar sesión</string>
+
+    <string name="nit">Nit</string>
+    <string name="nameCompany">Nombre de <string name="login">Iniciar sesión</string></string>
 
 </resources>
