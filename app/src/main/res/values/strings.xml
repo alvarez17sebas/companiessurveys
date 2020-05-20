@@ -1,10 +1,39 @@
 <resources>
-    <string name="app_name">Companies Surveys</string>
+    <string name="app_name">CompaniesSurveys</string>
 
     <string name="register_company">Registrar compañia</string>
     <string name="login">Iniciar sesión</string>
 
     <string name="nit">Nit</string>
-    <string name="nameCompany">Nombre de <string name="login">Iniciar sesión</string></string>
+    <string name="nameCompany">Nombre de compañia</string>
+    <string name="confirmRegister">Confirmar registro</string>
+
+    <string name="titleListMenu">Encuestas</string>
+    <string name="titleProfile">Perfil</string>
+    <string name="titleQuestion">Titulo de pregunta</string>
+
+    <string name="loading">Cargando...</string>
+    <string name="questionContent">Pregunta</string>
+    <string name="score">Puntaje</string>
+    <string name="createSurvey">Crear encuesta</string>
+    <string name="newSurvey">Nueva encuesta</string>
+    <string name="surveyName">Nombre de encuesta</string>
+    <string name="continuestr">Continue</string>
+    <string name="cancel">Cancelar</string>
+    <string name="description">Descripción</string>
+    <string name="enable">Habilitar</string>
+    <string name="surveyType">Seleccione tipo de encuesta</string>
+    <string name="scoreSurveyType">Encuesta con puntaje</string>
+    <string name="mixedSurveyType">Encuesta mixta</string>
+    <string name="options">Opciones</string>
+    <string name="option">Opción</string>
+
+    <string name="save">Guardar</string>
+
+
+    <string-array name="surveyTypesArray">
+        <item>Encuesta con puntaje</item>
+        <item>Encuesta mixta</item>
+    </string-array>
 
 </resources>

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Companies Surveys</string>
+
+    <string name="register_company">Register company</string>
+    <string name="login">Login</string>
+
+    <string name="nit">Nit</string>
+    <string name="nameCompany">Name company</string>
+    <string name="confirmRegister">Confirm register</string>
+
+    <string name="titleListMenu">Surveys</string>
+    <string name="titleProfile">Profile</string>
+    <string name="titleQuestion">Question title</string>
+
+    <string name="loading">Loading...</string>
+    <string name="questionContent">Question</string>
+    <string name="score">Score</string>
+
+    <string name="createSurvey">Create survey</string>
+    <string name="newSurvey">New survey</string>
+    <string name="surveyName">Survey name</string>
+    <string name="continuestr">Continuar</string>
+    <string name="cancel">cancel</string>
+    <string name="description">Description</string>
+    <string name="enable">Enable</string>
+    <string name="surveyType">Choose survey type</string>
+    <string name="scoreSurveyType">Score survey</string>
+    <string name="mixedSurveyType">Mixed survey</string>
+    <string name="options">Options</string>
+    <string name="option">Option</string>
+
+    <string name="save">Save</string>
+
+
+
+    <string-array name="surveyTypesArray">
+        <item>Score survey</item>
+        <item>Mixed survey</item>
+    </string-array>
+
+</resources>

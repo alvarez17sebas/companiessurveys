@@ -1,4 +1,5 @@
 package com.salvarez.companiessurveys.model.dto
 
-class QuestionScoreDto : QuestionDto() {
+class OptionDto {
+    var option: String = ""
 }

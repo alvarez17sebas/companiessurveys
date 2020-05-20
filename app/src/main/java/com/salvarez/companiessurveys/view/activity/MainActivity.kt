@@ -18,7 +18,7 @@ class MainActivity : FragmentActivity() {
         viewPager.adapter = pagerAdapter
 
         btnRegisterCompany.setOnClickListener {
-            startActivity(Intent(this, RegisterCompanyActivity::class.java))
+            startActivity(Intent(this, RegisterContainerActivity::class.java))
         }
     }
 }

@@ -1,5 +1,11 @@
 package com.salvarez.companiessurveys.model.dto
 
-abstract class QuestionDto() {
-    protected lateinit var question: String
+import java.io.Serializable
+
+abstract class QuestionDto : Serializable {
+
+    var question: String = ""
+    var options: MutableList<OptionDto>? = ArrayList()
+
+    abstract fun getQuestionType(): Int
 }
