@@ -48,4 +48,26 @@
     <dimen name="multiplier_16X_dp">32dp</dimen>
     <dimen name="multiplier_16X_sp">32sp</dimen>
 
+    <dimen name="multiplier_17X_dp">34dp</dimen>
+    <dimen name="multiplier_17X_sp">34sp</dimen>
+
+    <dimen name="multiplier_18X_dp">36dp</dimen>
+    <dimen name="multiplier_18X_sp">36sp</dimen>
+
+    <dimen name="multiplier_19X_dp">38dp</dimen>
+    <dimen name="multiplier_19X_sp">38sp</dimen>
+
+    <dimen name="multiplier_20X_dp">40dp</dimen>
+    <dimen name="multiplier_20X_sp">40sp</dimen>
+
+    <dimen name="multiplier_21X_dp">42dp</dimen>
+    <dimen name="multiplier_21X_sp">42sp</dimen>
+
+    <dimen name="multiplier_22X_dp">44dp</dimen>
+    <dimen name="multiplier_22X_sp">44sp</dimen>
+
+    <dimen name="multiplier_23X_dp">46dp</dimen>
+    <dimen name="multiplier_23X_sp">46sp</dimen>
+
+
 </resources>

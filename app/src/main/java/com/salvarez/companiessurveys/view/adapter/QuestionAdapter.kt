@@ -13,13 +13,22 @@ class QuestionAdapter(var data:MutableList<QuestionDto>) : RecyclerView.Adapter<
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        var view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_mixed_question_option_create, parent, false)
+        var view: View? = null
 
-        if(viewType == QuestionType.SCORE_QUESTION){
-            view = LayoutInflater.from(parent.context).inflate(R.layout.item_score_question_create, parent, false)
-            return ScoreQuestionViewHolder(view)
+        when (viewType) {
+            QuestionType.DROP_DOWN_QUESTION -> {
+                view =  LayoutInflater.from(parent.context).inflate(R.layout.item_mixed_question_dropdown, parent, false)
+                return DropDownViewHolder(view)
+            }
+            QuestionType.SINGLE_CHOOSE_QUESTION -> {
+                view =  LayoutInflater.from(parent.context).inflate(R.layout.item_mixed_question_dropdown, parent, false)//Replace layout after
+                return SingleChooseQuestionViewHolder(view)
+            }
+            else -> {
+                view = LayoutInflater.from(parent.context).inflate(R.layout.item_score_question_create, parent, false)
+                return ScoreQuestionViewHolder(view)
+            }
         }
-        return MixedQuestionViewHolder(view, this)
     }
 
     override fun getItemCount(): Int = data.size
@@ -35,11 +44,14 @@ class QuestionAdapter(var data:MutableList<QuestionDto>) : RecyclerView.Adapter<
             }
 
             QuestionType.DROP_DOWN_QUESTION ->{
-                var mixedQuestionViewHolder: MixedQuestionViewHolder  = holder as MixedQuestionViewHolder
-                //mixedQuestionViewHolder.drawData(question)
+                var dropDownViewHolder: DropDownViewHolder  = holder as DropDownViewHolder
+                dropDownViewHolder.drawData(question)
+
             }
 
             QuestionType.SINGLE_CHOOSE_QUESTION ->{
+                var singleChoose: SingleChooseQuestionViewHolder = holder as SingleChooseQuestionViewHolder
+                singleChoose.drawData(question)
             }
 
             QuestionType.MULTIPLE_CHOOSE_QUESTION ->{

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/multiplier_4X_dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvTitleQuestionSingleChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/multiplier_10X_dp"
+        android:layout_marginLeft="@dimen/multiplier_8X_dp"
+        android:typeface="serif"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupSingleChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/multiplier_6X_dp"
+        android:layout_marginLeft="@dimen/multiplier_8X_dp"
+        android:layout_marginTop="@dimen/multiplier_5X_dp"
+        android:layout_marginRight="@dimen/multiplier_8X_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleQuestionDropDown" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
