@@ -1,11 +1,10 @@
 package com.salvarez.companiessurveys.model.dto
 
 import com.salvarez.companiessurveys.QuestionType
-import java.io.Serializable
 
-class DropDownQuestionDto : QuestionDto(){
 
+class SingleChooseQuestionDto : QuestionDto() {
     override fun getQuestionType(): Int {
-        return QuestionType.DROP_DOWN_QUESTION
+        return QuestionType.SINGLE_CHOOSE_QUESTION
     }
 }

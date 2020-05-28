@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tvTitleQuestionSingleChoose"
+        android:id="@+id/tvTitleQuestionMultipleChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/multiplier_10X_dp"
@@ -17,15 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/radioGroupSingleChoose"
+    <LinearLayout
+        android:id="@+id/linearLayoutContentCheckboxes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginLeft="@dimen/multiplier_8X_dp"
         android:layout_marginRight="@dimen/multiplier_8X_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleQuestionSingleChoose" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleQuestionMultipleChoose" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,6 +41,7 @@ class OptionAdapter : RecyclerView.Adapter<OptionViewHolder>(), IViewHolderItemS
     }
 
     fun addOption(option: OptionDto){
+        option.idOption = System.currentTimeMillis().toInt()
         data.add(option)
         notifyItemInserted(data.size - 1)
     }

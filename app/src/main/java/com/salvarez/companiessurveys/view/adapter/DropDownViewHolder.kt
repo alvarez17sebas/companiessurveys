@@ -9,13 +9,13 @@ import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.dto.OptionDto
 import com.salvarez.companiessurveys.model.dto.QuestionDto
 
-class DropDownViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class DropDownViewHolder(itemView: View) : BaseViewHolder(itemView) {
     var tvTitle:TextView = itemView.findViewById(R.id.tvTitleQuestionDropDown)
     var spinnerOptions: Spinner = itemView.findViewById(R.id.spinnerOptionDropDown)
 
     var adapter: ArrayAdapter<String>? = null
 
-    fun drawData(question: QuestionDto){
+    override fun drawData(question: QuestionDto){
         tvTitle.text = question.question
 
         adapter = ArrayAdapter(itemView.context, R.layout.support_simple_spinner_dropdown_item, getStrOptionsList(question.options))
