@@ -4,42 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.CreateMixedQuestionActivity">
+    tools:context=".view.activity.CreateScoreQuestionActivity">
 
-    <EditText
-        android:id="@+id/etMixedQuestion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/multiplier_8X_dp"
-        android:layout_marginTop="@dimen/multiplier_8X_dp"
-        android:layout_marginRight="@dimen/multiplier_8X_dp"
-        android:ems="10"
-        android:hint="@string/titleQuestion"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/multiplier_8X_dp"
-        android:layout_marginTop="@dimen/multiplier_10X_dp"
-        android:text="@string/options"
-        android:textSize="@dimen/multiplier_8X_sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMixedQuestion" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMixedQuestions"
+        android:id="@+id/rvScoreQuestions"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/multiplier_12X_dp"
         app:layout_constraintBottom_toTopOf="@+id/btnScoreQuestionSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddScoreQuestion"

@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/etQuestionContent"
+        android:id="@+id/etScoreQuestionContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,10 +33,10 @@
         android:ems="10"
         android:hint="@string/score"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/etQuestionContent"
+        app:layout_constraintBottom_toBottomOf="@+id/etScoreQuestionContent"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/etScoreQuestionContent"
+        app:layout_constraintStart_toStartOf="@+id/guideline8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -49,7 +49,7 @@
         android:id="@+id/ivDeleteScoreQuestionItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/etQuestionContent"
+        app:layout_constraintBottom_toBottomOf="@+id/etScoreQuestionContent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etScore"
         app:layout_constraintTop_toTopOf="parent"

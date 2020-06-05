@@ -11,7 +11,7 @@ import com.salvarez.companiessurveys.model.GsonHelper
 import com.salvarez.companiessurveys.model.constant.TransferScreenKey
 import com.salvarez.companiessurveys.model.dto.*
 import com.salvarez.companiessurveys.model.factory.QuestionFactory
-import com.salvarez.companiessurveys.view.adapter.OptionAdapter
+import com.salvarez.companiessurveys.view.adapter.option.OptionAdapter
 import kotlinx.android.synthetic.main.activity_create_mixed_question.*
 
 class CreateMixedQuestionActivity : AppCompatActivity() {
@@ -41,26 +41,33 @@ class CreateMixedQuestionActivity : AppCompatActivity() {
     }
 
     private fun clickListenerBehaviors(){
-        fabAddTypeMixedQuestion.setOnClickListener {
-            var option: OptionDto = OptionDto()
+        fabAddScoreQuestion.setOnClickListener {
+
+            var option: OptionDto = if(questionType == QuestionType.SCORE_QUESTION){
+                ScoreOptionDto()
+            }else{
+                OptionDto()
+            }
             optionAdapter?.addOption(option)
         }
 
-        btnSave.setOnClickListener {
+        var intent: Intent = Intent()
+
+        btnScoreQuestionSave.setOnClickListener {
 
             var question = QuestionFactory.getQuestion(questionType)
 
             question.question = etMixedQuestion.text.toString()
             question.options = optionAdapter.getAdapterContent()
 
-            var intent: Intent = Intent()
             intent.putExtra(TransferScreenKey.QUESTION_TYPE_KEY, question.getQuestionType())
             intent.putExtra(TransferScreenKey.QUESTION_KEY, GsonHelper.objectToString(question))
             setResult(Activity.RESULT_OK, intent)
             finish()
         }
 
-        btnCancel.setOnClickListener{
+        btnScoreQuestionCancel.setOnClickListener{
+            setResult(Activity.RESULT_CANCELED, intent)
             finish()
         }
     }

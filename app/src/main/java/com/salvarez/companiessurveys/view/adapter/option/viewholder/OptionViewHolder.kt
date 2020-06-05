@@ -1,18 +1,18 @@
-package com.salvarez.companiessurveys.view.adapter
+package com.salvarez.companiessurveys.view.adapter.option.viewholder
 
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.ImageView
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.constant.AdapterEvent
 import com.salvarez.companiessurveys.model.dto.OptionDto
+import com.salvarez.companiessurveys.view.adapter.option.IMixedOptionTextChanged
+import com.salvarez.companiessurveys.view.adapter.option.IViewHolderItemSelected
 
-class OptionViewHolder(itemView: View, var viewHolderItemSelected: IViewHolderItemSelected, var textChanged: ITextChanged) : RecyclerView.ViewHolder(itemView) {
+class OptionViewHolder(itemView: View, var viewHolderItemSelected: IViewHolderItemSelected, var mixedOptionTextChanged: IMixedOptionTextChanged) : BaseOptionViewHolder(itemView) {
 
-    var etMixedQuestionOption: TextInputEditText = itemView.findViewById(R.id.etMixedQuestionOptionItemCreate)
     var ivDeleteMixedQuestionOption: ImageView = itemView.findViewById(R.id.ivDeleteMixedQuestionItemCreate)
     var etMixedQuestionOptionItemCreate: TextInputEditText = itemView.findViewById(R.id.etMixedQuestionOptionItemCreate)
 
@@ -33,14 +33,14 @@ class OptionViewHolder(itemView: View, var viewHolderItemSelected: IViewHolderIt
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                textChanged.textChanged(layoutPosition, s.toString())
+                mixedOptionTextChanged.textChanged(layoutPosition, s.toString())
             }
 
         })
 
     }
 
-    fun drawData(option: OptionDto){
-        etMixedQuestionOption.setText(option.option)
+    override fun drawOptionData(option: OptionDto) {
+        etMixedQuestionOptionItemCreate.setText(option.option)
     }
 }

@@ -1,17 +1,17 @@
-package com.salvarez.companiessurveys.view.adapter
+package com.salvarez.companiessurveys.view.adapter.question.viewholder
 
 import android.view.View
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.core.view.size
-import androidx.recyclerview.widget.RecyclerView
+import com.salvarez.companiessurveys.QuestionType
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.dto.OptionDto
 import com.salvarez.companiessurveys.model.dto.QuestionDto
+import com.salvarez.companiessurveys.view.adapter.question.IOptionSelected
 
-class SingleChooseQuestionViewHolder(itemView: View, var optionSelected: IOptionSelected) :
-    BaseViewHolder(itemView) {
+class SingleChooseViewHolder(itemView: View, var optionSelected: IOptionSelected) :
+    BaseQuestionViewHolder(itemView) {
 
     var tvTitleQuestionSingleChoose: TextView = itemView.findViewById(R.id.tvTitleQuestionSingleChoose)
     var radioGroup: RadioGroup = itemView.findViewById(R.id.radioGroupSingleChoose)
@@ -36,7 +36,7 @@ class SingleChooseQuestionViewHolder(itemView: View, var optionSelected: IOption
 
             for (i in 0..options!!.size){
                 if(options[i].idOption == checkedId){
-                    optionSelected.optionSelected(layoutPosition, i)
+                    optionSelected.optionSelected(layoutPosition, i, QuestionType.SINGLE_CHOOSE_QUESTION)
                     break
                 }
             }

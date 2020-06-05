@@ -11,20 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.CreateMixedQuestionActivity"></activity>
+        <activity android:name=".view.activity.CreateScoreQuestionActivity"></activity>
+        <activity android:name=".view.activity.CreateMixedQuestionActivity" />
         <activity
             android:name=".view.activity.CreateSurveyActivity"
             android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".view.activity.RegisterContainerActivity" />
-        <activity android:name=".view.activity.ContainerOptionsActivity" >
+        <activity android:name=".view.activity.ContainerOptionsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MainActivity">
-        </activity>
+        <activity android:name=".view.activity.MainActivity"></activity>
     </application>
 
 </manifest>

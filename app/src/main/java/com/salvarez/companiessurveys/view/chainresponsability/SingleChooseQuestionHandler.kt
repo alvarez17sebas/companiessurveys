@@ -2,7 +2,7 @@ package com.salvarez.companiessurveys.view.chainresponsability
 
 import android.view.View
 import com.salvarez.companiessurveys.QuestionType
-import com.salvarez.companiessurveys.view.adapter.IOptionSelected
+import com.salvarez.companiessurveys.view.adapter.question.IOptionSelected
 
 class SingleChooseQuestionHandler(nextViewHolderHandler: ViewHolderHandler, itemView: View, var optionSelected: IOptionSelected) : ViewHolderHandler() {
 
