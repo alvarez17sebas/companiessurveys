@@ -9,9 +9,9 @@ import com.salvarez.companiessurveys.QuestionType
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.dto.OptionDto
 import com.salvarez.companiessurveys.model.dto.QuestionDto
-import com.salvarez.companiessurveys.view.adapter.question.IOptionSelected
+import com.salvarez.companiessurveys.view.adapter.question.IMixedOptionSelected
 
-class DropDownQuestionViewHolder(itemView: View, var optionSelected: IOptionSelected) : BaseQuestionViewHolder(itemView) {
+class DropDownQuestionViewHolder(itemView: View, var mixedOptionSelected: IMixedOptionSelected) : BaseQuestionViewHolder(itemView) {
     var tvTitle:TextView = itemView.findViewById(R.id.tvTitleQuestionDropDown)
     var spinnerOptions: Spinner = itemView.findViewById(R.id.spinnerOptionDropDown)
 
@@ -37,7 +37,7 @@ class DropDownQuestionViewHolder(itemView: View, var optionSelected: IOptionSele
                 position: Int,
                 id: Long
             ) {
-                optionSelected.optionSelected(layoutPosition, position, QuestionType.DROP_DOWN_QUESTION)
+                mixedOptionSelected.optionSelected(layoutPosition, position, QuestionType.DROP_DOWN_QUESTION)
             }
         }
     }

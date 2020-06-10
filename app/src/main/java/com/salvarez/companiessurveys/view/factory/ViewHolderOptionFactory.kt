@@ -5,9 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.salvarez.companiessurveys.OptionType
 import com.salvarez.companiessurveys.R
+import com.salvarez.companiessurveys.view.adapter.IViewHolderItemSelected
 import com.salvarez.companiessurveys.view.adapter.option.IMixedOptionTextChanged
-import com.salvarez.companiessurveys.view.adapter.option.IScoreQuestionTextChanged
-import com.salvarez.companiessurveys.view.adapter.option.IViewHolderItemSelected
 import com.salvarez.companiessurveys.view.adapter.option.viewholder.BaseOptionViewHolder
 import com.salvarez.companiessurveys.view.adapter.option.viewholder.OptionViewHolder
 
@@ -17,8 +16,8 @@ class ViewHolderOptionFactory {
         fun getViewHolder(parent: ViewGroup,
                           viewType: Int,
                           viewHolderOptionSelected: IViewHolderItemSelected,
-                          optionMixedOptionTextChanged: IMixedOptionTextChanged,
-                          scoreQuestionTextChanged: IScoreQuestionTextChanged): BaseOptionViewHolder{
+                          optionMixedOptionTextChanged: IMixedOptionTextChanged
+        ): BaseOptionViewHolder{
             var view: View? = null
             return when(viewType){
                 OptionType.MIXED_OPTION -> {

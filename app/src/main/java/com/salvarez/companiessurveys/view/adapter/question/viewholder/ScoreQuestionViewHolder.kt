@@ -9,8 +9,8 @@ import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.constant.AdapterEvent
 import com.salvarez.companiessurveys.model.dto.QuestionDto
 import com.salvarez.companiessurveys.model.dto.ScoreQuestionDto
-import com.salvarez.companiessurveys.view.adapter.option.IScoreQuestionTextChanged
-import com.salvarez.companiessurveys.view.adapter.option.IViewHolderItemSelected
+import com.salvarez.companiessurveys.view.adapter.question.IScoreQuestionTextChanged
+import com.salvarez.companiessurveys.view.adapter.IViewHolderItemSelected
 
 class ScoreQuestionViewHolder(itemView: View, var viewHolderItemSelected: IViewHolderItemSelected, var textChanged: IScoreQuestionTextChanged) : BaseQuestionViewHolder(itemView) {
     var etQuestionContent: EditText = itemView.findViewById(R.id.etScoreQuestionContent)

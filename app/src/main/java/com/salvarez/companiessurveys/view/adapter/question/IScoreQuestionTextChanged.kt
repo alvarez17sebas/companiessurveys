@@ -1,4 +1,4 @@
-package com.salvarez.companiessurveys.view.adapter.option
+package com.salvarez.companiessurveys.view.adapter.question
 
 interface IScoreQuestionTextChanged {
     fun textContentChanged(index: Int ,text: String)

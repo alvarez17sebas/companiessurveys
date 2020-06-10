@@ -9,7 +9,7 @@ import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.constant.AdapterEvent
 import com.salvarez.companiessurveys.model.dto.OptionDto
 import com.salvarez.companiessurveys.view.adapter.option.IMixedOptionTextChanged
-import com.salvarez.companiessurveys.view.adapter.option.IViewHolderItemSelected
+import com.salvarez.companiessurveys.view.adapter.IViewHolderItemSelected
 
 class OptionViewHolder(itemView: View, var viewHolderItemSelected: IViewHolderItemSelected, var mixedOptionTextChanged: IMixedOptionTextChanged) : BaseOptionViewHolder(itemView) {
 

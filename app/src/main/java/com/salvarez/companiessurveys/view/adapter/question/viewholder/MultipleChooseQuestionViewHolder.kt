@@ -8,9 +8,9 @@ import com.salvarez.companiessurveys.QuestionType
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.dto.OptionDto
 import com.salvarez.companiessurveys.model.dto.QuestionDto
-import com.salvarez.companiessurveys.view.adapter.question.IOptionSelected
+import com.salvarez.companiessurveys.view.adapter.question.IMixedOptionSelected
 
-class MultipleChooseViewHolder(itemView: View, var optionSelected: IOptionSelected) : BaseQuestionViewHolder(itemView) {
+class MultipleChooseQuestionViewHolder(itemView: View, var mixedOptionSelected: IMixedOptionSelected) : BaseQuestionViewHolder(itemView) {
 
     var titleQuestion: TextView = itemView.findViewById(R.id.tvTitleQuestionMultipleChoose)
     var checkboxesContent: LinearLayout = itemView.findViewById(R.id.linearLayoutContentCheckboxes)
@@ -37,7 +37,7 @@ class MultipleChooseViewHolder(itemView: View, var optionSelected: IOptionSelect
             val idCheckBox = checkBox.id
             for (i in 0..options!!.size){
                 if(options[i].idOption == idCheckBox){
-                    optionSelected.optionSelected(layoutPosition, i, QuestionType.MULTIPLE_CHOOSE_QUESTION)
+                    mixedOptionSelected.optionSelected(layoutPosition, i, QuestionType.MULTIPLE_CHOOSE_QUESTION)
                     break
                 }
             }

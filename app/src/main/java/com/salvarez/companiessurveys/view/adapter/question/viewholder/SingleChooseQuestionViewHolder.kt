@@ -8,9 +8,9 @@ import com.salvarez.companiessurveys.QuestionType
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.dto.OptionDto
 import com.salvarez.companiessurveys.model.dto.QuestionDto
-import com.salvarez.companiessurveys.view.adapter.question.IOptionSelected
+import com.salvarez.companiessurveys.view.adapter.question.IMixedOptionSelected
 
-class SingleChooseViewHolder(itemView: View, var optionSelected: IOptionSelected) :
+class SingleChooseQuestionViewHolder(itemView: View, var mixedOptionSelected: IMixedOptionSelected) :
     BaseQuestionViewHolder(itemView) {
 
     var tvTitleQuestionSingleChoose: TextView = itemView.findViewById(R.id.tvTitleQuestionSingleChoose)
@@ -36,7 +36,7 @@ class SingleChooseViewHolder(itemView: View, var optionSelected: IOptionSelected
 
             for (i in 0..options!!.size){
                 if(options[i].idOption == checkedId){
-                    optionSelected.optionSelected(layoutPosition, i, QuestionType.SINGLE_CHOOSE_QUESTION)
+                    mixedOptionSelected.optionSelected(layoutPosition, i, QuestionType.SINGLE_CHOOSE_QUESTION)
                     break
                 }
             }
