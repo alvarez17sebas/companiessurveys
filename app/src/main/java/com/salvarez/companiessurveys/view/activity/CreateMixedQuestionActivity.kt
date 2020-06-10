@@ -4,17 +4,21 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.salvarez.companiessurveys.QuestionType
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.GsonHelper
 import com.salvarez.companiessurveys.model.constant.TransferScreenKey
 import com.salvarez.companiessurveys.model.dto.*
-import com.salvarez.companiessurveys.model.factory.QuestionFactory
+import com.salvarez.companiessurveys.model.factory.OptionFactory
 import com.salvarez.companiessurveys.view.adapter.option.OptionAdapter
+import com.salvarez.companiessurveys.viewmodel.CreateMixedQuestionViewModel
 import kotlinx.android.synthetic.main.activity_create_mixed_question.*
 
 class CreateMixedQuestionActivity : AppCompatActivity() {
+
+    private lateinit var createMixedQuestionViewModel: CreateMixedQuestionViewModel
 
     private var optionAdapter: OptionAdapter = OptionAdapter()
     private var questionType: Int = -1
@@ -22,6 +26,8 @@ class CreateMixedQuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_mixed_question)
+
+        createMixedQuestionViewModel = ViewModelProviders.of(this).get(CreateMixedQuestionViewModel::class.java)
 
         getParameters()
 
@@ -43,11 +49,8 @@ class CreateMixedQuestionActivity : AppCompatActivity() {
     private fun clickListenerBehaviors(){
         fabAddScoreQuestion.setOnClickListener {
 
-            var option: OptionDto = if(questionType == QuestionType.SCORE_QUESTION){
-                ScoreOptionDto()
-            }else{
-                OptionDto()
-            }
+            var option: OptionDto = createMixedQuestionViewModel.getEmptyQuestionDto(questionType)
+
             optionAdapter?.addOption(option)
         }
 
@@ -55,10 +58,10 @@ class CreateMixedQuestionActivity : AppCompatActivity() {
 
         btnScoreQuestionSave.setOnClickListener {
 
-            var question = QuestionFactory.getQuestion(questionType)
+            var questionText: String = etMixedQuestion.text.toString()
+            var options:MutableList<OptionDto> = optionAdapter.getAdapterContent()
 
-            question.question = etMixedQuestion.text.toString()
-            question.options = optionAdapter.getAdapterContent()
+            var question: QuestionDto = createMixedQuestionViewModel.getFillQuestionDto(questionType, questionText, options)
 
             intent.putExtra(TransferScreenKey.QUESTION_TYPE_KEY, question.getQuestionType())
             intent.putExtra(TransferScreenKey.QUESTION_KEY, GsonHelper.objectToString(question))
