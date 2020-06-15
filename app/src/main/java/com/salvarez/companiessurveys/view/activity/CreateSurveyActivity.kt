@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
@@ -22,12 +23,15 @@ import com.salvarez.companiessurveys.model.dto.SurveyDto
 import com.salvarez.companiessurveys.model.factory.QuestionFactory
 import com.salvarez.companiessurveys.view.adapter.question.QuestionAdapter
 import com.salvarez.companiessurveys.view.fragment.ListOptionDialogFragment
+import com.salvarez.companiessurveys.viewmodel.CreateSurveyViewModel
 import kotlinx.android.synthetic.main.activity_create_survey.*
 
 class CreateSurveyActivity : AppCompatActivity(), ITypeSelected {
 
     private val REQUEST_MIXED_QUESTION_CODE: Int = 1
     private val REQUEST_SCORE_QUESTION_CODE: Int = 2
+
+    private lateinit var createSurveyVieModel: CreateSurveyViewModel
 
     private var typeSurvey: Int = -1
     private var questionAdapter: QuestionAdapter =
@@ -36,6 +40,8 @@ class CreateSurveyActivity : AppCompatActivity(), ITypeSelected {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_survey)
+
+        createSurveyVieModel = ViewModelProviders.of(this).get(CreateSurveyViewModel::class.java)
 
         getParameters()
         clickListenerBehaviors()

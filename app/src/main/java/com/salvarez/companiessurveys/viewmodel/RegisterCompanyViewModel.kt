@@ -42,6 +42,10 @@ class RegisterCompanyViewModel(application: Application) : AndroidViewModel(appl
 
     }
 
+    private fun callLocalRepository(){
+
+    }
+
     private fun callRemoteRepository(companyDto: CompanyDto){
         remoteRepository.registerCompany(companyDto, object: IRepositoryCallback<Boolean>{
             override fun onSuccess(response: Boolean?) {

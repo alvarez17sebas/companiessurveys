@@ -2,24 +2,29 @@ package com.salvarez.companiessurveys.view.activity
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.salvarez.companiessurveys.QuestionType
 import com.salvarez.companiessurveys.R
 import com.salvarez.companiessurveys.model.constant.TransferScreenKey
 import com.salvarez.companiessurveys.model.dto.ScoreQuestionDto
 import com.salvarez.companiessurveys.view.adapter.question.QuestionAdapter
+import com.salvarez.companiessurveys.viewmodel.CreateScoreQuestionViewModel
 import kotlinx.android.synthetic.main.activity_create_score_question.*
 
 class CreateScoreQuestionActivity : AppCompatActivity() {
+
+    private lateinit var createScoreQuestionViewModel: CreateScoreQuestionViewModel
 
     private var questionAdapter: QuestionAdapter = QuestionAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_score_question)
+
+        createScoreQuestionViewModel = ViewModelProviders.of(this).get(CreateScoreQuestionViewModel::class.java)
 
         setupRecyclerView()
         clickBehaviors()
@@ -36,18 +41,15 @@ class CreateScoreQuestionActivity : AppCompatActivity() {
         var intent: Intent = Intent()
 
         fabAddScoreQuestion.setOnClickListener {
-            var scoreQuestion: ScoreQuestionDto = ScoreQuestionDto()
+            var scoreQuestion: ScoreQuestionDto = createScoreQuestionViewModel.getEmptyScoreQuestion(QuestionType.SCORE_QUESTION)
             questionAdapter.addQuestion(scoreQuestion)
         }
 
         btnScoreQuestionSave.setOnClickListener {
-            var scoreQuestionList: MutableList<ScoreQuestionDto> = ArrayList()
-            scoreQuestionList = questionAdapter.getAdapterContent() as MutableList<ScoreQuestionDto>
+            var scoreQuestionList: MutableList<ScoreQuestionDto> =  questionAdapter.getAdapterContent() as MutableList<ScoreQuestionDto>
 
-            var gson = Gson()
-            var strScoreQuestionList = gson.toJson(scoreQuestionList)
             intent.putExtra(TransferScreenKey.QUESTION_TYPE_KEY, QuestionType.SCORE_QUESTION)
-            intent.putExtra(TransferScreenKey.QUESTION_KEY, strScoreQuestionList)
+            intent.putExtra(TransferScreenKey.QUESTION_KEY, createScoreQuestionViewModel.getStrScoreQuestions(scoreQuestionList))
             setResult(Activity.RESULT_OK, intent)
             finish()
 
